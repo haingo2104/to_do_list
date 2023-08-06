@@ -3,10 +3,13 @@ import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 
 
-const home = async (req, res) => {
-    const todo = await prisma.my_Todo.findMany()
-
-    return res.render('home.ejs', { todo })
+const home = async (req , res) => {
+    try {
+        const todo = await prisma.my_Todo.findMany()
+        return res.render('home.ejs' , {todo})
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 

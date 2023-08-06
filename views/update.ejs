@@ -1,13 +1,20 @@
-<form action="" method="post">
-    <div>
-        <label for="titre">Titre:</label>
-        <input type="text" name="titre" id="" value="<%= todo.titre %>" >
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+            <form action="" method="POST">
+                <div class="mt-3">
+                    <label for="titre">Title:</label>
+                    <input type="text" id="titre" value="<%= todo.titre %>" name="titre" class="form-control">
+                </div>
+                <div class="mt-3">
+                    <label for="content">Content:</label>
+                    <textarea name="contenu" id="contenu" class="form-control" rows="10"><%= todo.contenu %></textarea>
+                </div>
+                <div class="mt-3">
+                    <button type="submit" class="form-control btn btn-primary">save</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <label for="contenu">Contenu:</label>
-        <textarea name="contenu" id="" cols="30" rows="10"><%= todo.contenu%></textarea>
-    </div>
-    <div>
-        <button type="submit">Save</button>
-    </div>
-</form>
+</div>
