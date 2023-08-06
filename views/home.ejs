@@ -1,0 +1,11 @@
+<div>
+    <% todo.forEach(item =>{ %>
+        <div>
+            <p><%= item.titre %></p>
+            <p><%= item.contenu %></p>
+            <a href="/update/<%= item.to_do_id %>">update</a>
+            <a href="/view/<%= item.to_do_id %>">view</a>
+            <a href="/delete/<%= item.to_do_id %>">delete</a>
+        </div>
+    <% }) %>
+</div>

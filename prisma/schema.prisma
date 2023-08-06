@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+
+
+//mysql_upgrade --force --force
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model my_Todo  {
+  to_do_id Int @id @default(autoincrement())
+  contenu String  @db.VarChar(255)
+  titre String  @db.VarChar(255)
+}
+
